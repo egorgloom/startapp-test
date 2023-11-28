@@ -16,15 +16,11 @@ a {
   box-sizing: border-box;
   padding: 20px;
   display: grid; 
-  grid-auto-columns: 25%; 
-  grid-template-columns: calc(25% - 30px); 
-  // grid-template-rows:25% 25% 25% 25%; 
-  gap: 10px 10px; 
+  grid-auto-columns: 33.3%; 
+  grid-template-columns: calc(33.3% - 30px); 
+  gap: 15px; 
   grid-template-areas: 
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . ."; 
+    ". . . "
 
 }
 
@@ -33,4 +29,14 @@ a {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+}
+
+@media (max-width: 320px) {
+  .products {
+    grid-auto-columns: 100%; 
+    grid-template-columns: calc(100%); 
+    grid-template-areas: 
+      "."
+  
+  }
 }

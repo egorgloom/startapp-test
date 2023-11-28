@@ -16,3 +16,21 @@
         height: 15%;
     }
 }
+
+@media (max-width: 320px) { 
+
+    .cartItem {
+
+        gap: 15px;
+
+        h3 {
+            font-size: 12px;
+            font-weight: 400;
+        }
+    
+        img {
+            width: 15%;
+            height: 20%;
+        }
+    }
+}

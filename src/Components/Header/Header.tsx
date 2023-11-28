@@ -24,6 +24,7 @@ const Header: FC = () => {
   return (
     <header className={cl.header}>
       <IoLogoAngular className={cl.logo} />
+      <div className={cl.search}>
       <input
         type="text"
         className={cl.input}
@@ -34,7 +35,7 @@ const Header: FC = () => {
         {search && <div className={cl.searchBlock}>
           {handleSearch.length ?
             handleSearch.map((item) =>
-              <Link to={`/product/${item.id}`}
+              <Link to={`products/${item.id}`}
                 className={cl.item}
                 key={item.id}
               >
@@ -47,6 +48,7 @@ const Header: FC = () => {
         </div>
         }
       </span>
+      </div>
       <Link to='cart'>
         <RiShoppingCartLine className={cl.card} />
       </Link>
