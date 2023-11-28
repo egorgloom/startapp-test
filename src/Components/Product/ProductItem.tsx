@@ -1,17 +1,38 @@
 import { FC } from 'react';
-import { IProducts } from '../../interfaces/interfaces';
+
+import { IProduct } from '../../interfaces/interfaces';
+
+import cl from "./ProductItem.module.scss"
+
+import Button from './../../UI/Button/Button';
+
+import { Link } from 'react-router-dom';
+
+import { useActions } from './../../hooks/useActions';
+
+
 
 interface IProductItem {
-    elem: IProducts
-
+  elem: IProduct
 }
 
-const ProductItem: FC<IProductItem> = ({elem}) => {
+const ProductItem: FC<IProductItem> = ({ elem }) => {
+
+  const {addToCart} = useActions()
+
   return (
-    <div>
-         <div>{elem.id}{elem.title}{elem.price}</div>
-         <img src={elem.image} alt="" />
+
+    <div className={cl.product}>
+      <Link to={`products/${elem.id}`} >
+        <h3>{elem.title}</h3>
+        <img src={elem.image} alt="product" />
+        <p>Price: {elem.price}$</p>
+      </Link>
+      <Button title="Add to cart" onClick={() => addToCart(elem)} />
     </div>
+
+
+
   );
 };
 
